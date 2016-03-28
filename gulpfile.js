@@ -38,6 +38,9 @@ gulp.task('watch', [ 'default' ], function() {
 gulp.task('publish', [ 'static', 'productionScripts' ], function() {
     var manifest = require('./manifest'),
         distFileName = manifest.name + ' v' + manifest.version;
+    gulp.src(['dist/**'])
+      .pipe(zip(distFileName + '.xpi'))
+      .pipe(gulp.dest('build'))
     return gulp.src(['dist/**'])
       .pipe(zip(distFileName + '.zip'))
       .pipe(gulp.dest('build'));
