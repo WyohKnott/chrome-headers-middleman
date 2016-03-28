@@ -52,7 +52,6 @@ export default React.createClass({
 
     return (
       <div>
-        <h1>Headers Middleman</h1>
         <URLRuleList rules={rules} onNewRule={this.newRule} onUpdatedRule={this.updateRule} onRemovedRule={this.removeRule} />
       </div>
     )

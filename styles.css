@@ -9,17 +9,11 @@ body {
 }
 
 body > div {
-  max-width: 800px;
+  width: 800px;
 }
 
 button:active, button:focus {
   outline: none;
-}
-
-h1 {
-  font-weight: lighter;
-  font-size: 48px;
-  color: rgba(0, 0, 0, 0.5);
 }
 
 h3 {
