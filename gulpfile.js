@@ -3,7 +3,7 @@ var browserify = require('browserify')
 var babelify = require('babelify')
 var through = require('through2')
 var mv = require('gulp-rename')
-var exec = require('child_process').exec
+var zip = require('gulp-zip')
 
 var jsFiles = 'src/**/*.js'
 var staticFiles = [
@@ -36,11 +36,11 @@ gulp.task('watch', [ 'default' ], function() {
 })
 
 gulp.task('publish', [ 'static', 'productionScripts' ], function() {
-  exec('zip -r headers-middleman.zip dist', function(err) {
-    if (err !== null) {
-      throw err;
-    }
-  })
+    var manifest = require('./manifest'),
+        distFileName = manifest.name + ' v' + manifest.version;
+    return gulp.src(['dist/**'])
+      .pipe(zip(distFileName + '.zip'))
+      .pipe(gulp.dest('build'));
 })
 
 function scriptsBuilder(debug) {
