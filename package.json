@@ -1,6 +1,6 @@
 {
   "name": "headers-middleman",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Add, remove, or modify HTTP Headers for any request based on a regular expression",
   "main": "manifest.json",
   "scripts": {
