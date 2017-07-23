@@ -1,4 +1,4 @@
-var db = chrome.storage.sync || chrome.storage.local
+var db = chrome.storage.sync
 
 export default class DB {
   constructor(cb) {
