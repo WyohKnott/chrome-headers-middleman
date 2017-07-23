@@ -3,7 +3,7 @@
   "description": "Add, remove, or modify HTTP Headers for any request based on a regular expression",
 
   "manifest_version": 2,
-  "version": "1.4",
+  "version": "1.4.1",
 
   "icons": {
     "128": "images/icon/icon-128.png"
@@ -26,7 +26,7 @@
   ],
 
   "options_ui": {
-    "chrome_style": false,
+    "open_in_tab": true,
     "page": "options.html"
   },
 
