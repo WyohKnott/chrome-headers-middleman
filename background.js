@@ -1,8 +1,6 @@
 // For testing
 typeof require === 'function' && (chrome = require('./tests/chrome-mock'))
 
-var storage = chrome.storage.sync || chrome.storage.local
-
 var Middleman = {
   rules: [],
   transformer: function(details) {
@@ -62,7 +60,7 @@ function findBy(arr, prop, val) {
 }
 
 function refresh() {
-  storage.get(null, function(d) {
+  chrome.storage.sync.get(null, function(d) {
     d.rules && d.rules.forEach(function(rule) {
       rule.pattern = new RegExp(rule.pattern)
     })
